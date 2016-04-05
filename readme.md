@@ -33,5 +33,9 @@ $ xa psc
 $ git clone https://github.com/endurox-dev/endurox-node
 $ cd endurox-node
 $ npm install
+# Run the test server:
 $ node server
 ```
+
+# Testing
+Point your browser to `http://localhost:3008/tpcall'. This should call "UNIXINFO" service from EnduroX test001 suite.
