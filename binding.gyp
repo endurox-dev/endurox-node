@@ -6,12 +6,12 @@
 
         "include_dirs": [
             "<!(node -e \"require('nan')\")",
-            "/home/gritins/projects/endurox/include"
+            "/home/user1/projects/endurox/include"
         ],
 
         'libraries': [
 
-            '-L /home/gritins/projects/endurox/dist/lib',
+            '-L /home/user1/projects/endurox/dist/lib',
             '-l m',
             '-l ubf',
             '-l nstd',
