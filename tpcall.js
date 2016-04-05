@@ -58,51 +58,9 @@ module.exports = function tpcall(options, callback) {
         }
 
 
-        // parse FML to a more readable form
+        // Return the UBF data.
 
-        response = {};
-
-        metaValues = _.pick(data, metaValueFields);
-
-        _.forOwn(metaValues, function(value, key) {
-            response[key] = value[0];
-        });
-
-        metaArrays = _.pick(data, metaArrayFields);
-
-        _.forOwn(metaArrays, function(value, key) {
-            response[key] = value;
-        });
-
-        rowArrays = _.omit(data, metaValueFields.concat(metaArrayFields));
-
-
-        // no rows if UI_ITEMS_TOT is zero
-
-        if (!response.UI_ITEMS_TOT) {
-
-            response.rows = [];
-
-            callback(err, response);
-            return;
-        }
-
-        rows = [];
-
-        rowCount = (_.values(rowArrays)[0] || []).length;
-
-        for (i = 0; i < rowCount; i++) {
-
-            var item = {};
-
-            _.forOwn(rowArrays, function(value, key) {
-                item[key] = value[i];
-            });
-
-            rows.push(item);
-        }
-
-        response.rows = rows;
+        response = data;
 
         callback(null, response);
     });
