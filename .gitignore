@@ -1,0 +1,6 @@
+/build
+/node_modules
+.DS_Store
+.idea
+npm-debug.log
+.Trash-1000
