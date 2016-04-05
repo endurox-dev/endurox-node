@@ -8,9 +8,9 @@ var app = express();
 
 app.use(bodyParser.json());
 
-app.post('/tpcall', function(req, res) {
+app.get('/tpcall', function(req, res) {
 
-    tpcall(req.body, function(err, data) {
+    tpcall({serviceName:"UNIXINFO",fml:{}}, function(err, data) {
 
         if (err) {
 

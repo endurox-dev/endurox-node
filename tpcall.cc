@@ -6,9 +6,8 @@
 #include <nan.h>
 
 #include <atmi.h>
-#include <ubf.h>
+#include <fml.h>
 #include <ndebug.h>
-#include <test.fd.h>
 
 using std::domain_error;
 using std::stringstream;
@@ -155,7 +154,7 @@ Local<Object> buildResponse(FBFR *p_fb) {
 				// add array with key fldname
 			}
 
-			dtype = Bldtype(fldid);
+			dtype = Bfldtype(fldid);
 			occs = Boccur(p_fb, fldid);
 			fldname =  Bfname(fldid);
 
